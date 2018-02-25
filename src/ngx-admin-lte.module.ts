@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 import { ToasterModule } from 'angular2-toaster/angular2-toaster';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -29,6 +29,13 @@ import { UserBoxComponent } from './widgets/user-box';
 import { BreadcrumbComponent } from './widgets/breadcrumb';
 import { ComponentLoaderComponent } from './widgets/component-loader';
 
+// cloudinary
+import {
+  CloudinaryModule,
+  CloudinaryConfiguration,
+} from '@cloudinary/angular-5.x';
+import { Cloudinary } from 'cloudinary-core';
+
 // Services
 
 import { UserService } from './services/user.service';
@@ -46,6 +53,8 @@ import { LoggerService } from './services/logger.service';
 import { LayoutAuthComponent } from './layouts/auth/auth';
 import { LayoutLoginComponent } from './layouts/login/login.component';
 import { LayoutRegisterComponent } from './layouts/register/register.component';
+
+const _config: any = {};
 
 @NgModule({
   declarations: [
@@ -74,6 +83,9 @@ import { LayoutRegisterComponent } from './layouts/register/register.component';
     RouterModule,
     ToasterModule,
     HttpClientModule,
+    CloudinaryModule.forRoot({ Cloudinary }, {
+      cloud_name: _config.cloud_name,
+    } as CloudinaryConfiguration),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -96,4 +108,12 @@ import { LayoutRegisterComponent } from './layouts/register/register.component';
     LoggerService,
   ],
 })
-export class NgxAdminLteModule {}
+export class NgxAdminLteModule {
+  static forRoot(config: any): ModuleWithProviders {
+    Object.assign(_config, config);
+    return {
+      ngModule: NgxAdminLteModule,
+      providers: [NgxAdminLteModule, { provide: 'config', useValue: config }],
+    };
+  }
+}
