@@ -9,8 +9,8 @@
 <ul class="dropdown-menu">
   <!-- The user image in the menu -->
   <li class="user-header">
-    <cl-image *ngIf="currentUser?.avatar" *ngIf="currentUser?.avatar" [public-id]="currentUser.avatar" class="img-circle" width="184"
-      height="184" format="jpg" alt="Avatar"></cl-image>
+    <cl-image *ngIf="currentUser?.avatar" [public-id]="currentUser.avatar" class="img-circle" width="184" height="184" format="jpg"
+      alt="Avatar"></cl-image>
     <p>
       {{currentUser.getName()}}
       <span [hidden]="!currentUser.occupation">- {{currentUser.occupation}}</span>
