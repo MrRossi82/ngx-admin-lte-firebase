@@ -1,18 +1,16 @@
 export class User {
-  public firstname: string;
-  public lastname: string;
+  public name: string;
   public email: string;
-  public avatarUrl: string;
+  public avatar: string;
   public creationDate: Date;
   public preferredLang: string;
   public occupation: string;
   public connected = false;
 
   public constructor(data: any = {}) {
-    this.firstname = data.firstname || '';
-    this.lastname = data.lastname || '';
+    this.name = data.name || '';
     this.email = data.email || '';
-    this.avatarUrl = data.avatarUrl || '';
+    this.avatar = data.avatar || '';
     this.occupation = data.occupation || '';
     this.creationDate = data.creation_date || null;
     this.preferredLang = data.preferredLang || null;
@@ -20,6 +18,6 @@ export class User {
   }
 
   public getName() {
-    return this.firstname + ' ' + this.lastname;
+    return this.name;
   }
 }

@@ -158,6 +158,10 @@
   dependencies:
     tslib "^1.7.1"
 
+"@cloudinary/angular-5.x@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@cloudinary/angular-5.x/-/angular-5.x-1.0.1.tgz#64ca4d1f516c780147c17e3d80d281299c0af79c"
+
 "@compodoc/compodoc@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@compodoc/compodoc/-/compodoc-1.0.1.tgz#6f2706ce3dc524ce6612fffbd9b557c41c74d88a"
@@ -1088,6 +1092,12 @@ clone@^1.0.2:
 clone@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/clone/-/clone-2.1.1.tgz#d217d1e961118e3ac9a4b8bba3285553bf647cdb"
+
+cloudinary-core@^2.5.0:
+  version "2.5.0"
+  resolved "https://registry.yarnpkg.com/cloudinary-core/-/cloudinary-core-2.5.0.tgz#580d7255a394f0900879e7eee0d6f3072df99ac5"
+  dependencies:
+    lodash ">=3.0"
 
 co@^4.6.0:
   version "4.6.0"
@@ -3786,6 +3796,10 @@ lodash.templatesettings@^3.0.0:
 lodash.uniq@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
+
+lodash@>=3.0:
+  version "4.17.5"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.5.tgz#99a92d65c0272debe8c96b6057bc8fbfa3bed511"
 
 lodash@^3.8.0:
   version "3.10.1"
